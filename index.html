@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Космически Изследвания</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">КосмоИзследване</div>
+            <ul>
+                <li><a href="#home">Начало</a></li>
+                <li><a href="#missions">Мисии</a></li>
+                <li><a href="#future">Бъдещи Проекти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div id="earth-3d"></div>
+            <h1>Разкриване на Тайните на Вселената</h1>
+            <p>Отправете се на пътешествие през космоса и времето</p>
+        </section>
+
+        <section id="missions" class="missions-section">
+            <h2>Активни Космически Мисии</h2>
+            <div class="mission-dashboard">
+                <div class="mission-filters">
+                    <button class="filter-btn active" data-filter="all">Всички</button>
+                    <button class="filter-btn" data-filter="deep-space">Дълбок Космос</button>
+                    <button class="filter-btn" data-filter="research">Изследване</button>
+                </div>
+                <div class="mission-grid">
+                    <!-- Mission cards will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section id="future" class="future-section">
+            <h2>Бъдещи Космически Проекти</h2>
+            <div class="future-projects">
+                <div class="project-timeline">
+                    <!-- Future projects will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

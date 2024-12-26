@@ -1,0 +1,272 @@
+:root {
+    --space-black: #0a0a0a;
+    --cosmic-blue: #1a237e;
+    --neon-purple: #b39ddb;
+    --neon-green: #69f0ae;
+    --neon-orange: #ffab40;
+    --card-bg: rgba(26, 35, 126, 0.2);
+    --gradient-primary: linear-gradient(45deg, var(--neon-purple), var(--neon-green));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--space-black);
+    color: white;
+    line-height: 1.6;
+}
+
+h1, h2, h3, .logo {
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Header and Navigation */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: rgba(10, 10, 10, 0.9);
+    backdrop-filter: blur(10px);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: var(--neon-purple);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--neon-green);
+}
+
+/* Hero Section */
+#hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 60px 20px;
+    background: var(--space-black);
+    overflow: hidden;
+}
+
+#earth-3d {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#earth-3d canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+#hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 1rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(179, 157, 219, 0.5);
+    position: relative;
+    z-index: 1;
+}
+
+#hero p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--neon-purple);
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Missions Section */
+.missions-section {
+    position: relative;
+    padding: 5rem 5%;
+    background: var(--space-black);
+}
+
+.mission-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    background: var(--card-bg);
+    border: 1px solid var(--neon-purple);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--gradient-primary);
+    border-color: transparent;
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.mission-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border: 1px solid var(--neon-purple);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.mission-card:hover {
+    transform: translateY(-10px);
+}
+
+.mission-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--neon-purple);
+}
+
+.mission-card h3 {
+    padding: 1rem;
+    color: var(--neon-purple);
+    margin: 0;
+}
+
+.mission-card p {
+    padding: 0 1rem;
+    flex-grow: 1;
+}
+
+.mission-info {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    border-top: 1px solid var(--neon-purple);
+}
+
+.status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    background: var(--neon-green);
+    color: var(--space-black);
+}
+
+.status.active {
+    background: var(--neon-green);
+}
+
+.status.progress {
+    background: var(--neon-orange);
+}
+
+.launch-date {
+    font-size: 0.9rem;
+    color: var(--neon-purple);
+}
+
+/* Future Projects Section */
+.future-section {
+    padding: 5rem 5%;
+    background: linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.9));
+}
+
+.project-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    display: grid;
+    gap: 2rem;
+}
+
+.timeline-item {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 1px solid var(--neon-purple);
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateY(-5px);
+}
+
+.timeline-content {
+    padding: 1rem;
+}
+
+.timeline-content h3 {
+    color: var(--neon-purple);
+    margin-bottom: 1rem;
+}
+
+.timeline-date {
+    color: var(--neon-green);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+    
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .mission-filters {
+        flex-wrap: wrap;
+    }
+    
+    #earth-3d {
+        max-width: 90vw;
+    }
+}
